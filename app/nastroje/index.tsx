@@ -1,6 +1,6 @@
 // app/nastroje/index.tsx
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, FlatList } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from "expo-router";
 
@@ -16,7 +16,7 @@ export default function NastrojeScreen() {
     if (category === "Elektrické") {
       router.push("/nastroje/elektricke");
     }
-    // Additional categories could navigate similarly
+    // Add navigation for other categories if needed
   };
 
   return (
@@ -26,18 +26,18 @@ export default function NastrojeScreen() {
         <Text style={styles.topBarText}>Nástroje</Text>
       </View>
 
-      {/* Horizontal Categories Bar */}
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.categoriesContainer}>
+      {/* Categories Row */}
+      <View style={styles.categoriesRow}>
         {categories.map((cat, index) => (
-          <TouchableOpacity 
-            key={index} 
-            style={styles.category} 
+          <TouchableOpacity
+            key={index}
+            style={styles.categoryButton}
             onPress={() => handleCategoryPress(cat)}
           >
             <Text style={styles.categoryText}>{cat}</Text>
           </TouchableOpacity>
         ))}
-      </ScrollView>
+      </View>
 
       {/* Instructions List */}
       <FlatList
@@ -72,19 +72,28 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
-  categoriesContainer: {
+
+  // Categories in a horizontal row
+  categoriesRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     marginTop: 10,
   },
-  category: {
+  categoryButton: {
+    flex: 1,
+    marginHorizontal: 5,
     backgroundColor: 'rgba(242,156,75,0.3)',
-    padding: 10,
+    paddingVertical: 12,
     borderRadius: 8,
-    marginRight: 10,
+    alignItems: 'center',
   },
   categoryText: {
     color: '#405B73',
     fontSize: 14,
+    fontWeight: 'bold',
   },
+
+  // Cards for instructions
   card: {
     marginTop: 10,
     backgroundColor: 'white',
