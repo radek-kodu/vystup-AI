@@ -1,14 +1,23 @@
-// app/nastroje.tsx
+// app/nastroje/index.tsx
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, FlatList } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, FlatList } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useRouter } from "expo-router";
 
 export default function NastrojeScreen() {
+  const router = useRouter();
   const categories = ['Ruční', 'Elektrické', 'Bezpečnost'];
   const instructions = [
     { id: '1', title: 'Návod 1', description: 'Krátký popis... Krok za krokem' },
     { id: '2', title: 'Návod 2', description: 'Krátký popis... Krok za krokem' },
   ];
+
+  const handleCategoryPress = (category: string) => {
+    if (category === "Elektrické") {
+      router.push("/nastroje/elektricke");
+    }
+    // You can add navigation for other categories as needed.
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -20,9 +29,9 @@ export default function NastrojeScreen() {
       {/* Horizontal Categories Bar */}
       <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.categoriesContainer}>
         {categories.map((cat, index) => (
-          <View key={index} style={styles.category}>
+          <TouchableOpacity key={index} onPress={() => handleCategoryPress(cat)} style={styles.category}>
             <Text style={styles.categoryText}>{cat}</Text>
-          </View>
+          </TouchableOpacity>
         ))}
       </ScrollView>
 
