@@ -1,8 +1,8 @@
-// app/index.tsx
+// app/profil.tsx
 import { View, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function HomeScreen() {
+export default function ProfilScreen() {
   return (
     <SafeAreaView
       style={{
@@ -12,7 +12,7 @@ export default function HomeScreen() {
         justifyContent: "center",
       }}
     >
-      <Text style={{ color: "#405B73", fontSize: 24 }}>Domů Screen</Text>
+      <Text style={{ color: "#405B73", fontSize: 24 }}>Profil Screen</Text>
     </SafeAreaView>
   );
 }
