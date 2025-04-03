@@ -31,7 +31,7 @@ export default function Layout() {
         }}
       />
       <Tabs.Screen
-        name="nastroje"
+        name="nastroje" 
         options={{
           tabBarLabel: "Nástroje",
           tabBarIcon: ({ color, size }) => (

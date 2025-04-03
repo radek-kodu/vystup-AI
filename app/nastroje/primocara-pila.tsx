@@ -1,4 +1,4 @@
-// app/nastroje/pricomocara-pila.tsx
+// app/nastroje/primocara-pila.tsx
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -14,7 +14,9 @@ export default function PrimocaraPilaScreen() {
       {/* Content Section */}
       <View style={styles.content}>
         <Text style={styles.contentText}>
-          Detailní informace o Přímočaré pile... Můžete zde uvést technické specifikace, postupy použití, bezpečnostní pokyny a další důležité detaily.
+          Detailní informace o Přímočaré pile...  
+          Můžete zde uvést technické specifikace, postupy použití, 
+          bezpečnostní pokyny a další důležité detaily.
         </Text>
       </View>
     </SafeAreaView>

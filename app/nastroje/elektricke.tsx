@@ -14,8 +14,11 @@ export default function ElektrickeScreen() {
         <Text style={styles.topBarText}>Elektrické Nástroje</Text>
       </View>
       
-      {/* Navigation Button to "Přímočará pila" */}
-      <TouchableOpacity style={styles.button} onPress={() => router.push("/nastroje/primocara-pila")}>
+      {/* Button to “Přímočará pila” */}
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={() => router.push("/nastroje/primocara-pila")}
+      >
         <Text style={styles.buttonText}>Přímočará pila</Text>
       </TouchableOpacity>
     </SafeAreaView>

@@ -16,7 +16,7 @@ export default function NastrojeScreen() {
     if (category === "Elektrické") {
       router.push("/nastroje/elektricke");
     }
-    // You can add navigation for other categories as needed.
+    // Additional categories could navigate similarly
   };
 
   return (
@@ -29,7 +29,11 @@ export default function NastrojeScreen() {
       {/* Horizontal Categories Bar */}
       <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.categoriesContainer}>
         {categories.map((cat, index) => (
-          <TouchableOpacity key={index} onPress={() => handleCategoryPress(cat)} style={styles.category}>
+          <TouchableOpacity 
+            key={index} 
+            style={styles.category} 
+            onPress={() => handleCategoryPress(cat)}
+          >
             <Text style={styles.categoryText}>{cat}</Text>
           </TouchableOpacity>
         ))}
